@@ -1,7 +1,6 @@
 ## Introduction
 This is a project of stm32f103zet6, including camera driver, such as camera driver, lcd driver, rtos, etc.
-![demo](assets\assets.png#pic_center)
-
+![demo](assets/assets.png#pic_center)
 ## Build
 ### Method 1
 ```bash
