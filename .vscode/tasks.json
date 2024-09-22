@@ -1,0 +1,79 @@
+{
+    "tasks": [
+        {
+            "label": "Make_Build",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "-j4"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": "build",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Use make -j4 for parallel build."
+        },
+
+        {
+            "label": "Flash_Erase",
+            "type": "shell",
+            "command": "st-flash",
+            "args": [
+                "--connect-under-reset",
+                "erase"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+
+        {
+            "label": "Reset_St",
+            "type": "shell",
+            "command": "st-info",
+            "args": [
+                "--probe",
+                "--connect-under-reset"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+
+        {
+            "label": "Download",
+            "type": "shell",
+            "command": "openocd",
+            "args": [
+                "-f",
+                "D:/program/xpack-openocd/openocd/scripts/interface/stlink-v2.cfg",
+                "-f",
+                "D:/program/xpack-openocd/openocd/scripts/target/stm32f1x.cfg",
+                "-c",
+                "\"init; targets; reset halt; wait_halt; poll; flash write_image erase unlock build/CAMERALCD.elf; flash erase_check 0; reset run; shutdown\""
+            ],
+            "group": "build",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+
+        {
+            "label": "Connect",
+            "type": "shell",
+            "command": "openocd",
+            "args": [
+                "-f",
+                "D:/program/xpack-openocd/openocd/scripts/interface/stlink-v2.cfg",
+                "-f",
+                "D:/program/xpack-openocd/openocd/scripts/target/stm32f1x.cfg"
+            ],
+            "group": "build",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ]
+}
+

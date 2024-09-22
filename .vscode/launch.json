@@ -1,0 +1,39 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "cwd": "${workspaceRoot}",
+            "name": "Debug with OpenOCD",
+            "type": "cortex-debug",
+            "request": "launch",    // or attach
+            "executable": "${workspaceRoot}/build/CAMERALCD.elf",    // if convert to .hex, must clear build folder
+            "device": "STM32F103ZE",
+            "gdbPath" : "D:/program/gnu-arm-none-eabi/bin/arm-none-eabi-gdb.exe",
+            "toolchainPrefix" : "D:/program/gnu-arm-none-eabi/bin/arm-none-eabi-gdb-",
+            "servertype": "openocd",
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            },
+            // or choose "external" if you have a running OpenOCD server
+            // "servertype": "external",
+            // "gdbTarget": "localhost:3333",
+            "configFiles": [
+                "config/stlink.cfg",
+            ],
+            "svdFile": "${workspaceRoot}/STM32F103.svd",
+
+
+            // optional options
+            // "showDevDebugOutput": "vscode",
+            // "armToolchainPath": "D:/program/gcc-arm-none-eabi-9-2019-q4-major/bin/",
+            // "interface": "swd",
+            // "preLaunchTask": "Build all",
+            // "device": "STM32F103ZE",
+            // "configFiles": [
+            //     "D:/program/xpack-openocd/openocd/scripts/target/stm32f1x.cfg",         // the cfg file order must be stm32f1x.cfg first, stlink-v2.cfg second
+            //     "D:/program/xpack-openocd/openocd/scripts/interface/stlink-v2.cfg"
+            // ],
+        }
+    ]
+}

@@ -1,0 +1,4 @@
+F:/code/projects/17_freertosDev/cameraLcd/CMakeFiles/CAMERALCD.elf.dir
+F:/code/projects/17_freertosDev/cameraLcd/CMakeFiles/clean_all.dir
+F:/code/projects/17_freertosDev/cameraLcd/CMakeFiles/edit_cache.dir
+F:/code/projects/17_freertosDev/cameraLcd/CMakeFiles/rebuild_cache.dir
